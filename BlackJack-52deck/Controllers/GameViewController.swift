@@ -18,6 +18,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var cardCountLabel: UILabel!
     @IBOutlet weak var winsCountLabel: UILabel!
     
+//     MARK: - Properties
     var winCount : Int = 0;
     
     var newCardPosition       : CGFloat = 15
@@ -32,26 +33,14 @@ class GameViewController: UIViewController {
     
     var cardCount : Int = 52
     
-    var cardsArray : NSMutableArray = ["ace_of_clubs","ace_of_diamonds","ace_of_hearts","ace_of_spades",
-                                       "2_of_clubs","2_of_diamonds","2_of_hearts","2_of_spades",
-                                       "3_of_clubs","3_of_diamonds","3_of_hearts","3_of_spades",
-                                       "4_of_clubs","4_of_diamonds","4_of_hearts","4_of_spades",
-                                       "5_of_clubs","5_of_diamonds","5_of_hearts","5_of_spades",
-                                       "6_of_clubs","6_of_diamonds","6_of_hearts","6_of_spades",
-                                       "7_of_clubs","7_of_diamonds","7_of_hearts","7_of_spades",
-                                       "8_of_clubs","8_of_diamonds","8_of_hearts","8_of_spades",
-                                       "9_of_clubs","9_of_diamonds","9_of_hearts","9_of_spades",
-                                       "10_of_clubs","10_of_diamonds","10_of_hearts","10_of_spades",
-                                       "jack_of_clubs","jack_of_diamonds","jack_of_hearts","jack_of_spades",
-                                       "queen_of_clubs","queen_of_diamonds","queen_of_hearts","queen_of_spades",
-                                       "king_of_clubs","king_of_diamonds","king_of_hearts","king_of_spades"]
-    
+    var cardsArray = Deck()
     
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
     
+//    MARK: - Init
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         
@@ -62,15 +51,14 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //resetGame()
+//        resetGame()
         
-        //dealerCard1.image = UIImage(named: "back_blue")
-        //dealerCard2.image = UIImage(named: "back_blue")
-        
-        //playerCard1.image = UIImage(named: "back_red")
-        //playerCard2.image = UIImage(named: "back_red")
-        
-        // Do any additional setup after loading the view.
+        dealerCard1.image = UIImage(named: "back_blue")
+        dealerCard2.image = UIImage(named: "back_blue")
+
+        playerCard1.image = UIImage(named: "back_red")
+        playerCard2.image = UIImage(named: "back_red")
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -78,6 +66,7 @@ class GameViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+//     MARK: - Logic
     func getValueOfCard(cardName : String) -> Int {
         
         var value = 0
@@ -131,10 +120,10 @@ class GameViewController: UIViewController {
         
         let randNum  : Int = Int(arc4random_uniform(52))
         
-        let cardName : String = cardsArray[randNum] as! String
+        let cardName : String = Deck().cardsArray[randNum] 
         
         //remove card used
-        cardsArray.remove(randNum)
+        Deck().cardsArray.remove(at: randNum)
         
         cardCount -= 1
         
@@ -152,20 +141,7 @@ class GameViewController: UIViewController {
         
         if (cardCount <= 0) {
             
-            cardsArray = ["ace_of_clubs","ace_of_diamonds","ace_of_hearts","ace_of_spades",
-                          "2_of_clubs","2_of_diamonds","2_of_hearts","2_of_spades",
-                          "3_of_clubs","3_of_diamonds","3_of_hearts","3_of_spades",
-                          "4_of_clubs","4_of_diamonds","4_of_hearts","4_of_spades",
-                          "5_of_clubs","5_of_diamonds","5_of_hearts","5_of_spades",
-                          "6_of_clubs","6_of_diamonds","6_of_hearts","6_of_spades",
-                          "7_of_clubs","7_of_diamonds","7_of_hearts","7_of_spades",
-                          "8_of_clubs","8_of_diamonds","8_of_hearts","8_of_spades",
-                          "9_of_clubs","9_of_diamonds","9_of_hearts","9_of_spades",
-                          "10_of_clubs","10_of_diamonds","10_of_hearts","10_of_spades",
-                          "jack_of_clubs","jack_of_diamonds","jack_of_hearts","jack_of_spades",
-                          "queen_of_clubs","queen_of_diamonds","queen_of_hearts","queen_of_spades",
-                          "king_of_clubs","king_of_diamonds","king_of_hearts","king_of_spades"]
-            
+            cardsArray = Deck()
             cardCount = 52
             
         }
@@ -341,11 +317,6 @@ class GameViewController: UIViewController {
         oldCard.frame = playerCard2.frame
         self.view.addSubview(oldCard)
         
-        //oldCard.frame = CGRect(x: playerCard1.frame.origin.x + newCardPosition , y: playerCard1.frame.origin.y, width: playerCard1.frame.width, height: playerCard1.frame.height)
-        
-        
-        
-        
         UIView.transition(with: self.view, duration: 1.0, options: .curveEaseInOut, animations: {
             
             oldCard.frame = CGRect(x: self.playerCard1.frame.origin.x + self.newCardPosition , y: self.playerCard1.frame.origin.y, width: self.playerCard1.frame.width, height: self.playerCard1.frame.height)
@@ -405,7 +376,6 @@ class GameViewController: UIViewController {
                 let oldCard : UIImageView = UIImageView()
                 
                 oldCard.image = self.dealerCard2.image
-                //oldCard.frame = CGRect(x: self.dealerCard1.frame.origin.x + self.newDealerCardPosition , y: self.dealerCard1.frame.origin.y, width: self.dealerCard1.frame.width, height: self.dealerCard1.frame.height)
                 
                 oldCard.frame = self.dealerCard2.frame
                 

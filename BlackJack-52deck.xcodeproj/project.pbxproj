@@ -16,6 +16,9 @@
 		486D433D25F0F56900FBD5D6 /* BlackJack_52deckTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486D433C25F0F56900FBD5D6 /* BlackJack_52deckTests.swift */; };
 		486D434825F0F56900FBD5D6 /* BlackJack_52deckUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486D434725F0F56900FBD5D6 /* BlackJack_52deckUITests.swift */; };
 		486D435925F0F6BA00FBD5D6 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486D435825F0F6BA00FBD5D6 /* GameViewController.swift */; };
+		486D436725F1014600FBD5D6 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486D436625F1014600FBD5D6 /* Deck.swift */; };
+		486D437025F104A000FBD5D6 /* DeckTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486D436F25F104A000FBD5D6 /* DeckTest.swift */; };
+		486D437525F1185500FBD5D6 /* GameViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486D437425F1185500FBD5D6 /* GameViewControllerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,9 @@
 		486D434725F0F56900FBD5D6 /* BlackJack_52deckUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackJack_52deckUITests.swift; sourceTree = "<group>"; };
 		486D434925F0F56900FBD5D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		486D435825F0F6BA00FBD5D6 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		486D436625F1014600FBD5D6 /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
+		486D436F25F104A000FBD5D6 /* DeckTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckTest.swift; sourceTree = "<group>"; };
+		486D437425F1185500FBD5D6 /* GameViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewControllerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,14 +107,12 @@
 		486D432425F0F56500FBD5D6 /* BlackJack-52deck */ = {
 			isa = PBXGroup;
 			children = (
-				486D432525F0F56500FBD5D6 /* AppDelegate.swift */,
-				486D432725F0F56500FBD5D6 /* SceneDelegate.swift */,
-				486D432925F0F56500FBD5D6 /* ViewController.swift */,
-				486D432B25F0F56500FBD5D6 /* Main.storyboard */,
+				486D436225F0FA4100FBD5D6 /* AppDelegates */,
+				486D435E25F0FA3400FBD5D6 /* Controllers */,
+				486D435D25F0FA2800FBD5D6 /* Views */,
 				486D432E25F0F56800FBD5D6 /* Assets.xcassets */,
-				486D433025F0F56800FBD5D6 /* LaunchScreen.storyboard */,
 				486D433325F0F56800FBD5D6 /* Info.plist */,
-				486D435825F0F6BA00FBD5D6 /* GameViewController.swift */,
+				486D436B25F1043500FBD5D6 /* Entities */,
 			);
 			path = "BlackJack-52deck";
 			sourceTree = "<group>";
@@ -118,6 +122,8 @@
 			children = (
 				486D433C25F0F56900FBD5D6 /* BlackJack_52deckTests.swift */,
 				486D433E25F0F56900FBD5D6 /* Info.plist */,
+				486D436F25F104A000FBD5D6 /* DeckTest.swift */,
+				486D437425F1185500FBD5D6 /* GameViewControllerTests.swift */,
 			);
 			path = "BlackJack-52deckTests";
 			sourceTree = "<group>";
@@ -129,6 +135,41 @@
 				486D434925F0F56900FBD5D6 /* Info.plist */,
 			);
 			path = "BlackJack-52deckUITests";
+			sourceTree = "<group>";
+		};
+		486D435D25F0FA2800FBD5D6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				486D432B25F0F56500FBD5D6 /* Main.storyboard */,
+				486D433025F0F56800FBD5D6 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		486D435E25F0FA3400FBD5D6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				486D432925F0F56500FBD5D6 /* ViewController.swift */,
+				486D435825F0F6BA00FBD5D6 /* GameViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		486D436225F0FA4100FBD5D6 /* AppDelegates */ = {
+			isa = PBXGroup;
+			children = (
+				486D432525F0F56500FBD5D6 /* AppDelegate.swift */,
+				486D432725F0F56500FBD5D6 /* SceneDelegate.swift */,
+			);
+			path = AppDelegates;
+			sourceTree = "<group>";
+		};
+		486D436B25F1043500FBD5D6 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				486D436625F1014600FBD5D6 /* Deck.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,6 +304,7 @@
 			files = (
 				486D435925F0F6BA00FBD5D6 /* GameViewController.swift in Sources */,
 				486D432A25F0F56500FBD5D6 /* ViewController.swift in Sources */,
+				486D436725F1014600FBD5D6 /* Deck.swift in Sources */,
 				486D432625F0F56500FBD5D6 /* AppDelegate.swift in Sources */,
 				486D432825F0F56500FBD5D6 /* SceneDelegate.swift in Sources */,
 			);
@@ -272,6 +314,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				486D437025F104A000FBD5D6 /* DeckTest.swift in Sources */,
+				486D437525F1185500FBD5D6 /* GameViewControllerTests.swift in Sources */,
 				486D433D25F0F56900FBD5D6 /* BlackJack_52deckTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -442,6 +486,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "BlackJack-52deck/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -460,6 +505,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "BlackJack-52deck/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
