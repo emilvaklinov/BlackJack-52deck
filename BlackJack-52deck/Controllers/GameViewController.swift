@@ -75,15 +75,15 @@ class GameViewController: UIViewController {
             value = 1
         }
         
-        else if (cardName.hasPrefix("2")) {
+        else if (cardName.hasPrefix("2") || cardName.hasPrefix("jack") ) {
             value = 2
         }
         
-        else if (cardName.hasPrefix("3")) {
+        else if (cardName.hasPrefix("3") || cardName.hasPrefix("queen")) {
             value = 3
         }
         
-        else if (cardName.hasPrefix("4")) {
+        else if (cardName.hasPrefix("4") || cardName.hasPrefix("king")) {
             value = 4
         }
         
@@ -107,7 +107,7 @@ class GameViewController: UIViewController {
             value = 9
         }
         
-        else if (cardName.hasPrefix("10") || cardName.hasPrefix("jack") || cardName.hasPrefix("king") || cardName.hasPrefix("queen")) {
+        else if (cardName.hasPrefix("10")) {
             
             value = 10
         }
